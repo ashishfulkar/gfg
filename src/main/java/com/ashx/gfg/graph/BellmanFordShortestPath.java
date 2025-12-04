@@ -30,9 +30,7 @@ public class BellmanFordShortestPath {
         int V = graph.V;
         int[] dist = new int[V];
 
-        for (int i = 0; i < V; ++i) {
-            dist[i] = Integer.MAX_VALUE;
-        }
+        Arrays.fill(dist, Integer.MAX_VALUE);
         dist[src] = 0;
 
         for (int i = 1; i < V; ++i) {

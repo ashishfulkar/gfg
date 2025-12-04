@@ -68,6 +68,13 @@ public class GraphUtil {
     }
 
     public static int[][] getUndirectedWeightedGraph() {
+        /*
+                (0)--5--(1)--15--(3)
+                 |       |        |
+                 8       10       20
+                 |       |        |
+                 --------(2)-------
+         */
         return new int[][]{
                 {0, 5, 8, 0}, // V-0
                 {5, 0, 10, 15}, // V-1

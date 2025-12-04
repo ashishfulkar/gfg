@@ -21,7 +21,7 @@ public class MergeTwoSortedLinkedLists {
         if (b == null) {
             return a;
         }
-        Node<Integer> head = null, tail = null;
+        Node<Integer> head, tail;
         if (a.data <= b.data) {
             head = tail = a;
             a = a.next;

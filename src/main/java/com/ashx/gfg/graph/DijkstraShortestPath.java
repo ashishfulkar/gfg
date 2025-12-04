@@ -19,17 +19,17 @@ public class DijkstraShortestPath {
         int[] dist = new int[V];
         Arrays.fill(dist, Integer.MAX_VALUE);
         dist[src] = 0;
-        boolean[] fin = new boolean[V];
+        boolean[] visited = new boolean[V];
         for (int count = 0; count < V - 1; count++) {
             int u = -1;
             for (int i = 0; i < V; i++) {
-                if (!fin[i] && (u == -1 || dist[i] < dist[u])) {
+                if (!visited[i] && (u == -1 || dist[i] < dist[u])) {
                     u = i;
                 }
             }
-            fin[u] = true;
+            visited[u] = true;
             for (int v = 0; v < V; v++) {
-                if (!fin[v] && graph[u][v] != 0) {
+                if (!visited[v] && graph[u][v] != 0) {
                     dist[v] = Math.min(dist[v], dist[u] + graph[u][v]);
                 }
             }
